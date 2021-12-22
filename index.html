@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVER 영화</title>
+    <!-- <link rel="stylesheet" href="./css/notice.min.css"> -->
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" media="all and (max-width: 1024px)" href="./css/style_1024.css">
+    <link rel="stylesheet" media="all and (max-width: 768px)" href="./css/style_768.css">
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js"></script>
+    <!-- ie promise 사용 가능 srcript -->
+    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0/dist/fetch.umd.min.js"></script>
+    <!-- ie fetch 사용 가능 srcript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+    <!-- ie async 사용 가능 srcript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+    <!-- ie async 사용 가능 srcript -->
+
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <a href="index.html" class="logo"><span>영화</span></a>
+            <div class="login"><a href="login.html">로그인</a></div>
+            <ul class="user">
+                <li id="nickName"></li>
+                <li id="logOut">로그아웃</li>
+            </ul>
+        </div>
+    </header>
+    <div class="movie__search">
+        <div class="inner">
+          <span>출처 : 한국영화데이터베이스</span>
+            <form id="search__form" class="search__form"  autocomplete="off">
+                    <input id="search__value" type="text" name="search" placeholder="영화명 검색">
+                    <button type="submit" class="search__btn"><span class="search__icon"></span></button>
+            </form>
+            <span>영화 제목으로 검색이 가능합니다.</span>
+        </div>
+    </div>
+    <div class="search__menu">
+        <input type="checkbox" id="arrow">
+        <div class="search__contents">
+            <div class="inner">
+                <ul class="search__detail"></ul>
+            </div>
+            <div class="modal">
+                <div class="modal_body">
+                    <i class="x__btn"></i>
+                    <div class="contents">
+                        <div class="poster"><img src="" alt=""></div>
+                        <ul class="detail">
+                            <li class="movie__name"><strong></strong></li>
+                            <li class="open__date"></li>
+                            <li class="nation"></li>
+                            <li class="etc">
+                               <span>개요 : </span><span class="genre"></span><span class="rating"></span><span class="runtime"></span>
+                            </li>
+                            <li class="company"></li>
+                            <li class="director__name"></li>
+                            <li class="actor__name"></li>
+                        </ul>
+                    </div>
+                    <p class="plot"></p>
+                </div>
+            </div>
+        </div>
+        <label for="arrow"><div class="content__arrow"></div></label>
+    </div>
+    <div class="loading__group">
+        <div class="loading"></div>
+        <div>영화 정보를 불러오는 중입니다.</div>
+    </div>
+    <div class="sec01">
+        <div class="inner">
+            <div class="boxoffice__ranking"><span class="date"></span> 기준, 일별 관객수 순위</div>
+            <div class="swiper swiper-container">
+                <ol class="swiper-wrapper">
+                    <li class="swiper-slide poster0">
+                        <span class="poster__ranking">1</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster1">
+                        <span class="poster__ranking">2</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster2">
+                        <span class="poster__ranking">3</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster3">
+                        <span class="poster__ranking">4</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster4">
+                        <span class="poster__ranking">5</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster5">
+                        <span class="poster__ranking">6</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster6">
+                        <span class="poster__ranking">7</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster7">
+                        <span class="poster__ranking">8</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster8">
+                        <span class="poster__ranking">9</span>
+                        <img src="" alt="">
+                    </li>
+                    <li class="swiper-slide poster9">
+                        <span class="poster__ranking">10</span>
+                        <img src="" alt="">
+                    </li>
+                </ol>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <div class="sec02">
+        <div class="inner">
+            <ul class="detail">
+                <li class="movie__name"><strong></strong></li>
+                <li class="open__date"></li>
+                <li class="ranking"></li>
+                <li class="counting"></li>
+                <li class="genre"></li>
+                <li class="etc">
+                    <span class="nation"></span>
+                    <span class="rating"></span>
+                    <span class="runtime"></span>
+                </li>
+                <li class="text__inner">
+                    <ul>
+                        <li class="company"></li>
+                        <li class="director__name"></li>
+                        <li class="actor__name"></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="iframe">
+                <iframe id="iframe" src="" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <p class="plot"></p>
+        </div>
+    </div>
+    <footer>
+        <div class="inner">
+            <div class="corp_area">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">책임의 한계와 법적고지</a></li>
+                    <li><a href="#">영화 고객센터</a></li>
+                </ul>
+                <p class="info">본 콘텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</p>
+                <address><a href="#">NAVER Copyright © NAVER Corp. All Rights Reserved.</a></address>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="./js/notice.min.js"></script> -->
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/MultiClamp.js"></script>
+    <script type="text/babel" src="./js/index.js"></script>
+    <script type="text/babel" src="./js/search.js"></script>
+</body>
+
+</html>

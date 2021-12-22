@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+body {
+    min-width: 360px;
+}
+header .inner .login {
+    display: none !important;
+}
+header .inner ul.user {
+    display: none !important;
+}
+.sec01 .swiper {
+    width: 300px;
+}
+.search__contents .inner .search__detail li img {
+    width: 150px;
+    height: 200px;
+}
+.search__contents .inner .search__detail li .movieArt > * {
+    margin-bottom: 10px;
+}
+.search__contents .inner .search__detail li .movieArt {
+    font-size: 14px;
+}
+.search__contents .inner .search__detail li .movieArt p strong {
+    font-size: 1.3rem;
+}
+
+.search__contents .inner {
+    animation-name: sample;
+    height: 250px;
+}
+@keyframes sample {
+    /* 일회용 */
+    from {
+        height: 0;
+    }
+    to {
+        height: 250px;
+    }
+}
+
+.search__contents .modal .modal_body {
+    overflow-y: auto;
+}
+.search__contents .modal .modal_body .contents .detail {
+    padding-left: 20px;
+}
+.search__contents .modal .modal_body .contents .detail .movie__name {
+    font-size: 1.3rem;
+}
+.search__contents .modal .modal_body .contents .poster img {
+    width: 100px;
+    height: 150px;
+}
+.search__contents .modal .modal_body .contents .detail > * {
+    margin-bottom: 5px;
+}
+
+.search__contents .modal .modal_body .contents {
+    font-size: 14px;
+}
+
+.search__contents
+  .modal
+  .modal_body
+  .contents
+  .detail
+  .etc{
+    padding-left: 42px;
+    text-indent: -42px;
+  }
+
+.search__contents
+  .modal
+  .modal_body
+  .contents
+  .detail
+  .etc
+  span:nth-child(n + 2):nth-child(-n + 3) {
+  margin-right: 10px;
+}
+
+.search__contents
+  .modal
+  .modal_body
+  .contents
+  .detail
+  .etc
+  span:nth-child(n + 3)::before {
+    height: 15px;
+    left: -5px;
+}
+.search__menu .modal.show ul li.company{
+    padding-left: 55px;
+    text-indent: -55px;
+}
+
+.search__menu .modal.show ul li.actor__name{
+    padding-left: 41px;
+    text-indent: -41px;
+}
+
+
+
+.swiper-button-next,
+.swiper-button-prev {
+    transform: translateY(-50%);
+    display: block;
+}
+
+
+.swiper-slide:nth-child(n)::after {
+    top: 400px;
+    opacity: 1;
+}

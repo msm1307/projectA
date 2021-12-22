@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 로그인</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        header .inner{
+            /* margin: 30px auto; */
+            width: 100%;
+        }
+        header .inner .logo {
+            display: block;
+            margin: 30px auto;
+            background-position: 0 0;
+            width: 244px;
+            height: 49px;
+            background-image: url("https://ssl.pstatic.net/static/nid/login/m_sp_00_common_c860f0da.png");
+            background-size: 244px 92px;
+            background-repeat: no-repeat;
+        }
+        .content{
+            border:1px solid gray;
+            padding: 20px;
+            width: 350px;
+            margin: 0 auto;
+        }
+        .content #login{
+            display: block;
+            outline: none;
+            padding: 5px 6px;
+            width: 100%;
+        }
+        .content #login:focus{
+            border: 2px solid #03c75a;
+            border-radius: 3px;
+        }
+        .content .btn{
+            width: 100%;
+            height: 50px;
+            background-color: #03c75a;
+            margin-top: 20px;
+            cursor: pointer;
+            border:none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color:white;
+        }
+        .phrases{
+            margin: 30px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <a href="" class="logo"></a>
+        </div>
+    </header>
+    <div class="content">
+        <input type="text" id="login" placeholder="닉네임" maxlength="8">
+        <input type="button" class="btn" value="로그인" onclick="setParentText()">    
+    </div>
+    <div class="phrases">※ 해당 기능은 localStorage를 사용하여 제작되었습니다.</div>
+    <script>
+        function setParentText() {
+            let loginVal = document.querySelector("#login").value;
+            if (loginVal === "") {
+                alert("닉네임을 입력해 주세요!");
+                return false;
+            }else if(loginVal.length > 8){
+                alert("8글자 이하로 입력해 주세요!");
+                return false;
+            }
+            localStorage.setItem('nickName', loginVal);
+            opener.nickNameCheck();
+            window.close();
+        }
+    </script>
+</body>
+
+</html>
